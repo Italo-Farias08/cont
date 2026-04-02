@@ -1,0 +1,238 @@
+*{margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+body{
+ background:#020617;
+ color:#fff;
+ display:flex;
+ flex-direction:column;
+ min-height:100vh;
+}
+main{flex:1}
+header{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ padding:20px 40px;
+ position:fixed;
+ width:100%;
+ z-index:100;
+ background:rgba(0,0,0,0.3);
+ backdrop-filter:blur(5px);
+ transition:.4s;
+}
+header.scrolled{
+ background:#000;
+ padding:12px 40px;
+ box-shadow:0 5px 20px rgba(0,0,0,0.6);
+}
+header h1{color:#22c55e}
+nav{display:flex}
+nav a{margin-left:25px;
+    text-decoration:none;
+    color:#ccc;transition:.3s
+}
+nav a:hover{color:#22c55e}
+
+.menu-btn{display:none;
+    font-size:25px;
+    cursor:pointer;
+}
+.mobile{
+ position:fixed;
+ top:0;right:-100%;
+ width:250px;
+ height:100%;
+ background:#000;
+ padding:40px;
+ transition:.4s;
+ display:flex;
+ flex-direction:column;
+ gap:20px;
+}
+.mobile a{color:#fff;
+        text-decoration:none}
+.mobile.show{right:0}
+
+.hero{
+ height:100vh;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ text-align:center;
+ background:radial-gradient(circle,#22c55e22,#020617)
+}
+.hero h2{font-size:2.8rem}
+.hero p{color:#aaa;
+    margin-top:10px;
+    font-size: 1.3em;}
+
+section{padding:100px 40px}
+.titulo{text-align:center;
+    margin-bottom:40px}
+
+.sobre{text-align:center;
+    color:#aaa;
+    max-width:600px;
+    margin:auto;
+    font-size: 1.3em;
+}
+    
+
+.skills{display:flex;
+    gap:10px;
+    justify-content:center;
+    flex-wrap:wrap}
+.skill{background:#22c55e;
+    color:#000;padding:8px 15px;
+    border-radius:10px}
+    .skill:hover{
+        scale: 1.1;
+        transition-duration: .3s;
+        box-shadow: 0px 0px 5px green;
+    }
+.projetos{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+ gap:25px
+}
+.blue,.red{
+background:#0f172a;
+ border-radius:12px;
+ overflow:hidden;
+ transition:.3s
+}
+.card{
+ background:#0f172a;
+ border-radius:12px;
+ overflow:hidden;
+ transition:.3s
+}
+.blue img{
+  width:100%;
+    height:180px;
+    object-fit:cover} 
+    .blue-content{padding:15px}
+    .blue:hover{
+ transform:translateY(-10px);
+ box-shadow:0 10px 25px rgba(34, 78, 197, 0.2);
+} 
+.blue a{
+ display:inline-block;
+ margin-top:10px;
+ padding:8px 12px;
+ background:#225bc5;
+ color:#000;
+ border-radius:6px;
+ text-decoration:none
+}
+.red img{
+  width:100%;
+    height:180px;
+    object-fit:cover} 
+    .red-content{padding:15px}
+    .red:hover{
+ transform:translateY(-10px);
+ box-shadow:0 10px 25px rgba(197, 34, 34, 0.2);
+}
+
+.card img{width:100%;
+    height:180px;
+    object-fit:cover}
+.card-content{padding:15px}
+
+.card:hover{
+ transform:translateY(-10px);
+ box-shadow:0 10px 25px rgba(34,197,94,0.2);
+}
+.red a{
+ display:inline-block;
+ margin-top:10px;
+ padding:8px 12px;
+ background:#c52222;
+ color:#000;
+ border-radius:6px;
+ text-decoration:none
+}
+.card a{
+ display:inline-block;
+ margin-top:10px;
+ padding:8px 12px;
+ background:#22c55e;
+ color:#000;
+ border-radius:6px;
+ text-decoration:none
+}
+footer{
+ text-align:center;
+ padding:20px;
+ background:#000;
+ color:#777;
+ margin-top:auto;
+}
+.fade-up{opacity:0;
+    transform:translateY(30px);
+    transition:.8s}
+.fade-up.show{opacity:1;
+    transform:translateY(0)}
+.whatsapp{
+ position:fixed;
+ bottom:20px;
+ right:20px;
+ background:#25D366;
+ width:65px;
+ height:65px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ border-radius:50%;
+ box-shadow:0 8px 25px rgba(0,0,0,0.4);
+ z-index:100;
+ animation:pulse 2s infinite;
+}
+.whatsapp svg{
+ width:30px;
+ height:30px;
+ fill:white;
+}
+.whatsapp:hover{
+ transform:scale(1.15);
+ box-shadow:0 10px 30px rgba(37,211,102,0.6);
+}
+@keyframes pulse{
+ 0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7)}
+ 70%{box-shadow:0 0 0 20px rgba(37,211,102,0)}
+ 100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}
+}
+@keyframes vibrar{
+ 0%{transform:translateX(0)}
+ 25%{transform:translateX(-2px)}
+ 50%{transform:translateX(2px)}
+ 75%{transform:translateX(-2px)}
+ 100%{transform:translateX(0)}
+}
+.whatsapp:active{
+ animation:vibrar 0.2s;
+}
+@media(max-width:768px){
+ nav{display:none}
+ .hero h2{
+    font-size: 2.4em;
+ }
+ .card{
+    box-shadow:0 0px 15px rgba(34, 197, 94, 0.541);
+ }
+ .blue{
+    box-shadow:0 0px 15px rgba(34, 78, 197, 0.747);
+ }
+ .red{
+     box-shadow:0px 0px 15px rgba(197, 34, 34, 0.473);
+ }
+ .menu-btn{display:block}
+ .skill{
+     box-shadow: 0px 0px 5px green;
+ }
+}
